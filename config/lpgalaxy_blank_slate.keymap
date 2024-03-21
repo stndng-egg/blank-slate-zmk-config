@@ -36,22 +36,13 @@
 #endif
     };
 
-    macros {
-      ZMK_MACRO(thumbs_up,
-		wait-ms = <1>;
-		tap-ms = <5>;
-                bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
-		)
-    };
-    
-    tap_dances {
-    	shifty: shift_caps_word {
-		compatible = "zmk,behavior-tap-dance";
-		label = "TD_SHIFTY";
-		#binding-cells = <0>;
-		tapping-term-ms = <150>;
-		bindings = <&kp LSHFT>, <&caps_word>;
-	};
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
     };
 
 // Conditional layer only when we have less thumb keys
