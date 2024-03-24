@@ -76,7 +76,7 @@
 #elif defined(TBLE_MIT)
  &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
 #else
- &kp LCTRL      &kp LGUI   &kp LALT   &kp LG(D)   &lt SYM_L SPACE  &kp LA(TAB)  &kp LC(LA(TAB))  &kp SPACE      &kp RALT    &kp LEFT   &kp DOWN      &kp RIGHT
+ &kp LCTRL      &kp LGUI   &kp LALT   &kp LG(DOT)   &lt SYM_L SPACE  &kp LA(TAB)  &kp LC(LA(TAB))  &kp SPACE      &kp RALT    &kp LEFT   &kp DOWN      &kp RIGHT
 #endif
             >;
         };
