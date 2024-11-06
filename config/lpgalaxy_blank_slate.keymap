@@ -72,9 +72,9 @@
             label = "Base";
             bindings = <
 #ifdef QWERTY_BASE
- &kp ESC    &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
- &kp TAB    &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &studio_unlock &kp QUOT
- &kp LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
+ &kp TAB         &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P           &kp BKSP
+ &lt Num_L DEL   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &lt Nav_L SEMI  &kp RET
+ &mt LSHFT LPAR  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp UP          &mt RSHIFT RPAR
 #else
  &kp ESC    &kp Q      &kp W      &kp F       &kp P          &kp B          &kp J            &kp L          &kp U       &kp Y      &kp QUOT      &kp BKSP
  &kp TAB    &kp A      &kp R      &kp S       &kp T          &kp G          &kp M            &kp N          &kp E       &kp I      &kp O         &kp QUOT
@@ -85,7 +85,7 @@
 #elif defined(TBLE_MIT)
  &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
 #else
- &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L      &kp SPACE      &kp RET          &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
+ &kp LCTRL  &kp LGUI    &kp LALT  &kp LG(M)    &lt Sym_L SPACE   &kp LC(LA(TAB))  &kp K_APP  &kp SPACE      &kp RALT    &kp LEFT   &kp DOWN      &kp RIGHT
 #endif
             >;
         };
@@ -93,15 +93,15 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&bt BT_CLR &trans     &trans     &trans      &trans          &trans       &trans     &trans         &trans      &trans     &trans     &kp DEL
-&trans     &trans     &trans     &trans      &trans          &trans       &trans     &kp LEFT       &kp DOWN    &kp UP     &kp RIGHT  &trans
-&trans     &bt BT(0)  &bt BT(1)  &bt BT(2)   &bt BT(3)       &bt BT(4)    &trans     &kp HOME       &kp PG_DN   &kp PG_UP  &kp END    &trans
+&bt BT_CLR &bt BT(0)  &bt BT(1)  &bt BT(2)   &bt BT(3)       &bt BT(4)    &kp PG_UP  &kp HOME       &kp UP      &kp END       &none      &trans
+&trans     &none      &none      &none       &none           &none        &kp PG_DN  &kp LEFT       &kp DOWN    &kp RIGHT     &none      &trans
+&trans     &none      &none      &none       &none           &none        &none      &none          &none       &none         &none      &trans
 #ifdef TBLE_DUAL_2U
 &trans  &trans        &trans     &trans              &trans                    &trans       &trans         &trans &trans &trans
 #elif defined(TBLE_MIT)
 &trans  &trans        &trans     &trans      &trans                &trans             &trans      &trans   &trans &trans &trans
 #else
-&trans  &trans        &trans     &trans      &trans          &trans       &trans    &trans  &trans         &trans &trans &trans
+&trans      &trans      &trans    &trans      &trans         &trans       &tog NAV_L &trans         &studio_unlock &trans     &trans     &trans
 #endif
             >;
         };
@@ -109,15 +109,15 @@
         num_layer {
             label = "Num";
             bindings = <
-&trans     &kp LBKT   &trans &trans &trans    &kp RBKT    &kp C_PREV    &kp N7     &kp N8      &kp N9       &trans     &trans
-&trans     &kp MINUS  &trans &trans &trans    &kp EQUAL   &kp C_NEXT    &kp N4     &kp N5      &kp N6       &trans     &trans
-&trans     &kp GRAVE  &trans &trans &trans    &kp BSLH    &trans        &kp N1     &kp N2      &kp N3       &trans     &trans
+&kp ESC    &kp F1   &kp F2   &kp F3   &kp F4    &none       &kp KP_ASTERISK  &kp KP_N7     &kp KP_N8      &kp KP_N9       &kp KP_SLASH     &trans
+&trans     &kp F5   &kp F6   &kp F7   &kp F8    &none       &kp KP_PLUS      &kp KP_N4     &kp KP_N5      &kp KP_N6       &kp KP_MINUS     &trans
+&trans     &kp F9   &kp F10  &kp F11  &kp F12   &kp KP_NUM  &kp K_CALC       &kp KP_N1     &kp KP_N2      &kp KP_N3       &trans           &trans
 #ifdef TBLE_DUAL_2U
 &trans  &trans       &trans     &kp N0              &trans                 &trans            &trans         &trans &trans &trans
 #elif defined(TBLE_MIT)
 &trans  &trans       &trans     &kp N0      &trans           &none            &trans        &kp DEL      &trans &trans &trans
 #else
-&trans  &trans       &trans     &kp N0      &trans    &none         &none     &kp ESC        &kp DEL      &trans &trans &trans
+&trans     &trans   &trans   &trans   &trans    &trans      &tog Num_L       &kp KP_N0     &kp KP_DOT     &trans          &trans           &trans
 #endif
             >;
         };
@@ -125,17 +125,25 @@
         sym_layer {
             label = "Sym";
             bindings = <
-&trans     &kp LBRC   &kp AMPS   &kp STAR    &kp LPAR     &kp RBRC     &trans     &trans    &trans       &trans       &trans     &bootloader
-&trans     &kp COLON  &kp DLLR   &kp PRCNT   &kp CARET    &kp PLUS     &trans     &trans    &trans       &trans       &trans     &trans
-&trans     &kp TILDE  &kp EXCL   &kp AT      &kp HASH     &kp PIPE     &trans     &trans    &trans       &trans       &trans     &trans
+&kp GRAVE  &kp N1     &kp N2     &kp N3      &kp N4       &kp N5       &kp N6     &kp N7    &kp N8       &kp N9       &kp N0     &trans
+&kp CAPS   &none      &none      &none       &none        &none        &none      &kp MINUS &kp EQUAL    &kp NUBS     &kp APOS   &trans
+&trans     &none      &none      &none       &none        &none        &none      &kp FSLH  &kp LBKT     &kp RBKT     &kp PG_UP  &trans
 #ifdef TBLE_DUAL_2U
 &trans &trans        &trans     &kp RPAR                &trans                    &trans       &trans         &trans &trans &trans
 #elif defined(TBLE_MIT)
 &trans &trans        &trans     &kp RPAR        &trans                &trans             &trans      &trans   &trans &trans &trans
 #else
-&trans &trans        &trans     &kp RPAR        &trans          &trans       &trans    &trans  &trans         &trans &trans &trans
+&trans     &trans     &trans     &trans      &none        &trans       &tog Sym_L &kp RSHFT    &kp RCTRL    &kp HOME     &kp PG_DN  &kp END
 #endif
             >;
+        };
+
+	extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
         };
 
 
