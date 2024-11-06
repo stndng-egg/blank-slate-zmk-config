@@ -94,7 +94,7 @@
 #elif defined(TBLE_MIT)
  &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
 #else
- &kp LCTRL  &kp LGUI    &kp LALT  &kp LG(M)    &lt SYM_L SPACE   &kp LC(LA(TAB))  &kp K_APP  &kp SPACE      &kp RALT    &kp LEFT   &kp DOWN      &kp RIGHT
+ &kp LCTRL       &kp LGUI   &kp LALT  &kp LG(LC(D) &lt SYM_L SPACE &kp LG(LC(LEFT)) &kp LG(LC(RIGHT)) &kp SPACE  &kp RALT    &kp LEFT   &kp DOWN      &kp RIGHT
 #endif
             >;
         };
