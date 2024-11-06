@@ -43,7 +43,16 @@
                 bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
 		)
     };
-    
+
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
+
     tap_dances {
     	shifty: shift_caps_word {
 		compatible = "zmk,behavior-tap-dance";
