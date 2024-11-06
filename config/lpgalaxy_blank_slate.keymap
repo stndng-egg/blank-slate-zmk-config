@@ -73,7 +73,7 @@
             bindings = <
 #ifdef QWERTY_BASE
  &kp TAB         &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P           &kp BKSP
- &lt Num_L DEL   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &lt Nav_L SEMI  &kp RET
+ &lt NUM_L DEL   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &lt NAV_L SEMI  &kp RET
  &mt LSHFT LPAR  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp UP          &mt RSHIFT RPAR
 #else
  &kp ESC    &kp Q      &kp W      &kp F       &kp P          &kp B          &kp J            &kp L          &kp U       &kp Y      &kp QUOT      &kp BKSP
@@ -85,7 +85,7 @@
 #elif defined(TBLE_MIT)
  &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
 #else
- &kp LCTRL  &kp LGUI    &kp LALT  &kp LG(M)    &lt Sym_L SPACE   &kp LC(LA(TAB))  &kp K_APP  &kp SPACE      &kp RALT    &kp LEFT   &kp DOWN      &kp RIGHT
+ &kp LCTRL  &kp LGUI    &kp LALT  &kp LG(M)    &lt SYM_L SPACE   &kp LC(LA(TAB))  &kp K_APP  &kp SPACE      &kp RALT    &kp LEFT   &kp DOWN      &kp RIGHT
 #endif
             >;
         };
@@ -117,7 +117,7 @@
 #elif defined(TBLE_MIT)
 &trans  &trans       &trans     &kp N0      &trans           &none            &trans        &kp DEL      &trans &trans &trans
 #else
-&trans     &trans   &trans   &trans   &trans    &trans      &tog Num_L       &kp KP_N0     &kp KP_DOT     &trans          &trans           &trans
+&trans     &trans   &trans   &trans   &trans    &trans      &tog NUM_L       &kp KP_N0     &kp KP_DOT     &trans          &trans           &trans
 #endif
             >;
         };
@@ -133,7 +133,7 @@
 #elif defined(TBLE_MIT)
 &trans &trans        &trans     &kp RPAR        &trans                &trans             &trans      &trans   &trans &trans &trans
 #else
-&trans     &trans     &trans     &trans      &none        &trans       &tog Sym_L &kp RSHFT    &kp RCTRL    &kp HOME     &kp PG_DN  &kp END
+&trans     &trans     &trans     &trans      &none        &trans       &tog SYM_L &kp RSHFT    &kp RCTRL    &kp HOME     &kp PG_DN  &kp END
 #endif
             >;
         };
